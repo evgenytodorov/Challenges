@@ -1,0 +1,22 @@
+/*
+    Created by: Evgeny Todorov
+    Last updated: 02/08/23
+    Description: Styles for About Me page.
+*/
+
+img {
+    margin: 
+    border: 5px dashed black;
+    border-radius: 10px;
+}
+
+.heading {
+    text-align: center;
+
+}
+
+#hobbies-list {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+}

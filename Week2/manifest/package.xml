@@ -49,13 +49,13 @@
             <name>CustomApplication</name>
         </types>
         <types>
-            <members>Class-History Layout</members>
-            <members>Class-Math Layout</members>
-            <members>Class-Science Layout</members>
+            <members>Class__c-History Layout</members>
+            <members>Class__c-Math Layout</members>
+            <members>Class__c-Science Layout</members>
             <name>Layout</name>
         </types>
         <types>
-            <members>Enroll Student</members>
+            <members>Class__c.Enroll_Student</members>
             <name>QuickAction</name>
         </types>
 

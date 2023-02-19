@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+        <types>
+            <members>Case.DI ChallengeI</members>
+            <name>AssignmentRule</name>
+        </types>
+        <types>
+            <members>Case.DI Challenge II</members>
+            <name>AutoResponseRule</name>
+        </types>
+        <types>
+            <members>*</members>
+            <name>PathAssistant</name>
+        </types>
+        <types>
+            <members>*</members>
+            <name>CustomObject</name>
+        </types>
+        <types>
+            <members>Case</members>
+            <members>Contact</members>
+            <name>CustomObject</name>
+        </types>
+        <types>
+            <members>*</members>
+            <name>CustomTab</name>
+        </types>
+        <types>
+            <members>Subjects</members>
+            <name>GlobalValueSet</name>
+        </types>
+        <types>
+            <members>Teacher</members>
+            <name>Profile</name>
+        </types>
+        <types>
+            <members>*</members>
+            <name>PermissionSet</name>
+        </types>
+        <types>
+            <members>Principal</members>
+            <members>Vice_Principal</members>
+            <members>Senior_Teacher</members>
+            <members>Teacher</members>
+            <name>Role</name>
+        </types>
+        <types>
+            <members>SVChallengeI</members>
+            <name>CustomApplication</name>
+        </types>
+        <types>
+            <members>Class-History Layout</members>
+            <members>Class-Math Layout</members>
+            <members>Class-Science Layout</members>
+            <name>Layout</name>
+        </types>
+        <types>
+            <members>Enroll Student</members>
+            <name>QuickAction</name>
+        </types>
+
+
+        <version>56.0</version>
+    </Package>

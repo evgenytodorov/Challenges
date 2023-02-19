@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age_Restriction</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF( NOT( ISBLANK( Birthdate ) ) &amp;&amp; ( Birthdate &gt;  DATE(YEAR(TODAY()) - 10, MONTH(TODAY()), DAY(TODAY())) ), TRUE, FALSE)</errorConditionFormula>
+    <errorDisplayField>Birthdate</errorDisplayField>
+    <errorMessage>Must be at least ten years old.</errorMessage>
+</ValidationRule>

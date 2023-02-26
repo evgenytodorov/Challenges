@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <description>Elite Challenge I attempt.</description>
+    <environments>Default</environments>
+    <interviewLabel>Adding Students to Under Capacity Classes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Adding Students to Under Capacity Classes</label>
+    <loops>
+        <name>Loop_through_Enrolled_Students</name>
+        <label>Loop through Enrolled Students</label>
+        <locationX>176</locationX>
+        <locationY>278</locationY>
+        <collectionReference>varEnrolledStudentsPerClass</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <noMoreValuesConnector>
+            <targetReference>Get_All_Classes_and_Capacities</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_All_Classes_and_Capacities</name>
+        <label>Get All Classes and Capacities</label>
+        <locationX>176</locationX>
+        <locationY>494</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <object>Class__c</object>
+        <outputReference>varClassesAndCapacities</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>Capacity__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_All_Enrolled_Students_Per_Class</name>
+        <label>Get All Enrolled Students Per Class</label>
+        <locationX>176</locationX>
+        <locationY>158</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Enrolled_Students</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Enrolled</stringValue>
+            </value>
+        </filters>
+        <object>Class_Roster__c</object>
+        <outputReference>varEnrolledStudentsPerClass</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Class_Name__c</queriedFields>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_All_Enrolled_Students_Per_Class</targetReference>
+        </connector>
+    </start>
+    <status>Draft</status>
+    <variables>
+        <name>varClassesAndCapacities</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Class__c</objectType>
+    </variables>
+    <variables>
+        <name>varEnrolledStudentsPerClass</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Class_Roster__c</objectType>
+    </variables>
+</Flow>
